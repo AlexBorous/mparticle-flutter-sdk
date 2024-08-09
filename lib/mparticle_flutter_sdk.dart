@@ -2,14 +2,15 @@
 
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/services.dart';
+import 'package:mparticle_flutter_sdk/apple/authorization_status.dart';
 import 'package:mparticle_flutter_sdk/events/commerce_event.dart';
 import 'package:mparticle_flutter_sdk/events/event_type.dart';
 import 'package:mparticle_flutter_sdk/events/product_action_type.dart';
 import 'package:mparticle_flutter_sdk/events/promotion_action_type.dart';
 import 'package:mparticle_flutter_sdk/identity/identity_type.dart';
-import 'package:mparticle_flutter_sdk/apple/authorization_status.dart';
 import 'package:mparticle_flutter_sdk/src/commerce/commerce_helpers.dart';
 import 'package:mparticle_flutter_sdk/src/identity/identity_helpers.dart';
 import 'package:mparticle_flutter_sdk/src/user.dart';
@@ -28,17 +29,16 @@ class MparticleFlutterSdk {
   /// The most common reason that this method returns null is if an API Key and
   /// secret have not been provided properly to the underlying platform SDK.
   static Future<MparticleFlutterSdk?> getInstance() async {
-    try {
-      if (_instance == null) {
-        if (await _channel.invokeMethod('isInitialized') == true) {
-          _instance = new MparticleFlutterSdk();
-        }
+    if (_instance == null) {
+      if (await _channel.invokeMethod('isInitialized') == true) {
+        _instance = MparticleFlutterSdk();
+      } else {
+        log('Error initializing MparticleFlutterSdk',
+            error: 'isInitialized returned false');
+        return null;
       }
-      return _instance;
-    } catch (e) {
-      print(e);
-      return null;
     }
+    return _instance;
   }
 
   static const MethodChannel _channel =

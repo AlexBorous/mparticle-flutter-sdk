@@ -1,25 +1,25 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:mparticle_flutter_sdk/mparticle_flutter_sdk.dart';
-import 'package:mparticle_flutter_sdk/events/event_type.dart';
-import 'package:mparticle_flutter_sdk/events/commerce_event.dart';
-import 'package:mparticle_flutter_sdk/events/product_action_type.dart';
-import 'package:mparticle_flutter_sdk/events/promotion_action_type.dart';
-import 'package:mparticle_flutter_sdk/events/promotion.dart';
-import 'package:mparticle_flutter_sdk/events/product.dart';
-import 'package:mparticle_flutter_sdk/events/impression.dart';
-import 'package:mparticle_flutter_sdk/events/screen_event.dart';
-import 'package:mparticle_flutter_sdk/events/mp_event.dart';
-import 'package:mparticle_flutter_sdk/events/transaction_attributes.dart';
-import 'package:mparticle_flutter_sdk/identity/identity_type.dart';
-import 'package:mparticle_flutter_sdk/kits/kits.dart';
-import 'package:mparticle_flutter_sdk/identity/alias_request.dart';
-import 'package:mparticle_flutter_sdk/identity/identity_api_result.dart';
-import 'package:mparticle_flutter_sdk/identity/identity_api_error_response.dart';
-import 'package:mparticle_flutter_sdk/identity/client_error_codes.dart';
+import 'package:flutter/material.dart';
 import 'package:mparticle_flutter_sdk/apple/authorization_status.dart';
 import 'package:mparticle_flutter_sdk/consent/consent.dart';
+import 'package:mparticle_flutter_sdk/events/commerce_event.dart';
+import 'package:mparticle_flutter_sdk/events/event_type.dart';
+import 'package:mparticle_flutter_sdk/events/impression.dart';
+import 'package:mparticle_flutter_sdk/events/mp_event.dart';
+import 'package:mparticle_flutter_sdk/events/product.dart';
+import 'package:mparticle_flutter_sdk/events/product_action_type.dart';
+import 'package:mparticle_flutter_sdk/events/promotion.dart';
+import 'package:mparticle_flutter_sdk/events/promotion_action_type.dart';
+import 'package:mparticle_flutter_sdk/events/screen_event.dart';
+import 'package:mparticle_flutter_sdk/events/transaction_attributes.dart';
+import 'package:mparticle_flutter_sdk/identity/alias_request.dart';
+import 'package:mparticle_flutter_sdk/identity/client_error_codes.dart';
+import 'package:mparticle_flutter_sdk/identity/identity_api_error_response.dart';
+import 'package:mparticle_flutter_sdk/identity/identity_api_result.dart';
+import 'package:mparticle_flutter_sdk/identity/identity_type.dart';
+import 'package:mparticle_flutter_sdk/kits/kits.dart';
+import 'package:mparticle_flutter_sdk/mparticle_flutter_sdk.dart';
 
 void main() {
   runApp(MyApp());
